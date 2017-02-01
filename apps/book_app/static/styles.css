@@ -1,0 +1,33 @@
+body{
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(97, 198, 192, 0.8);
+    font-family: 'Roboto Slab', serif;
+}
+
+h1{
+    display: inline;
+    margin-right: 300px;
+}
+
+header{
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+a{
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+
+#other_books, #recent_books{
+    margin-top: 30px;
+    display: inline-block;
+}
+
+#other_books{
+    vertical-align: top;
+    margin-left: 150px;
+}

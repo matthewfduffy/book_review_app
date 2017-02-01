@@ -1,0 +1,41 @@
+body{
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(97, 198, 192, 0.8);
+    font-family: 'Roboto Slab', serif;
+}
+
+#login, #register{
+    display: inline;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+#login{
+    vertical-align: top;
+}
+#login {
+    display: inline-block;
+}
+form{
+    display: inline-block;
+}
+form input{
+    margin-left: 20em;
+}
+
+form label{
+    position: absolute;
+}
+
+h1 {
+    display: inline-block;
+    text-align: center;
+}
+
+#error{
+    background: red;
+    color: white;
+    text-align: center;
+}

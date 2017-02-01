@@ -1,0 +1,21 @@
+body{
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+    background-color: rgba(97, 198, 192, 0.8);
+    font-family: 'Roboto Slab', serif;
+}
+
+
+header a, h5{
+    display: inline-block;
+}
+
+h5{
+    margin-right: 250px;
+}
+
+header a{
+    margin-left: 15px;
+    margin-right: 15px;
+}

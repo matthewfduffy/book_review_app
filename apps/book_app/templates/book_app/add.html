@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add Book and Review</title>
+    {% load staticfiles %}
+        <link rel="stylesheet" href="{% static '../static/add_styles.css' %}" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  </head>
+  <body>
+      <header>
+          <h5>Logged in as {{request.session.username}}</h5>
+          <a href="{% url 'books:index' %}">Home</a>
+          {% if 'id' in request.session %}
+            <a href="{% url 'books:logout' %}">Logout</a>
+          {% else %}
+            <a href="{% url 'login:login' %}">Login</a>
+          {% endif %}
+    </header>
+    {% if messages %}
+      <ul>
+      {% for message in messages %}
+        <li{% if message.tags %} class="{{message.tags}}"{% endif %}>{{message}}</li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    <h2>Add a Book and Review:</h2>
+    <form action="{% url 'books:add_book' %}" method="post">
+      {% csrf_token %}
+      <label for="title">Book Title: </label><br />
+      <input type="text" name="title"><br />
+      <label for="author">Author: </label><br />
+      <select name="author">
+        {% for author in authors %}
+          <option value="{{author.name}}">{{author.name}}</option>
+        {% endfor %}
+    </select><p>(Don't see your Author? Add one at the bottom of the page!)</p><br />
+      <label for="review">Review: </label><br />
+      <textarea name="review" rows="8" cols="40"></textarea><br />
+      <label for="rating">Rating: </label>
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br />
+      <input type="submit" name="submit" value="Add Book and Review">
+      <hr />
+    </form>
+    <form id="author_add" action="{% url 'books:add_author' %}" method="post">
+      {% csrf_token %}
+      <label for="author">Add an Author: </label>
+      <input type="text" name="author"><br />
+      <input type="submit" name="submit" value="Add Author">
+    </form>
+  </body>
+</html>
